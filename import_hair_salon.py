@@ -4,7 +4,7 @@ bl_info = {
   "blender": (3,2,0),
   "version": (0, 0, 1),
   "location": "File > Import-Export",
-  "description": "Import USC-HairSalon hairstyle",
+  "description": "Import USC-HairSalon hairstyles",
   "category": "Import-Export",
 }
 
