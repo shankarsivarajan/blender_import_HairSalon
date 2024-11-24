@@ -1,8 +1,8 @@
 bl_info = {
   "name": "USC-HairSalon",
   "author": "Shankar Sivarajan",
-  "blender": (3,2,0),
-  "version": (0, 0, 1),
+  "blender": (4,3,0),
+  "version": (0, 0, 2),
   "location": "File > Import-Export",
   "description": "Import USC-HairSalon hairstyles",
   "category": "Import-Export",
@@ -71,7 +71,6 @@ class ImportHair(bpy.types.Operator, ImportHelper):
 
             num_strands = struct.unpack('<i', file.read(4))[0]
             print(f"num_strands = {num_strands}")
-            assert num_strands == 10000, f"expected 10000 strands, got {num_strands} strands"
     
             strand_idx = 0
             while (strand_idx < num_strands):
@@ -79,7 +78,6 @@ class ImportHair(bpy.types.Operator, ImportHelper):
                 # read num of verts of strand
                 strand_idx = strand_idx + 1    
                 num_verts = struct.unpack('<i', file.read(4))[0]
-                assert num_verts == 1 or num_verts == 100, f"num_verts should be 1 or 100, got: {num_verts}"
                 
                 # read strand
                 strand_data_xyz = array.array('f') 
